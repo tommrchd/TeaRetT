@@ -117,6 +117,7 @@ class ServeurThreadClient implements Runnable {
 				}
 
 			} catch (IOException e) {
+				// si un joueur ferme sa page
 				System.out.println("Le client " + this.joueur.toString() + " à quitter");
 				TPServeur.joueurs.remove(this.joueur);
 				TPServeur.grille[this.joueur.getPosX()][this.joueur.getPosY()] = false;
@@ -133,6 +134,7 @@ class ServeurThreadClient implements Runnable {
 	}
 
 	/**
+	 * vérification de l'état de blocage horizontal d'un joueur
 	 * 
 	 * @param j
 	 */
@@ -154,7 +156,7 @@ class ServeurThreadClient implements Runnable {
 	}
 
 	/**
-	 * 
+	 * vérification de l'état de blocage vertical d'un joueur
 	 * @param j
 	 */
 	private void etatVerticle(TPJoueur j) {
@@ -166,6 +168,7 @@ class ServeurThreadClient implements Runnable {
 				TPJoueur advSup = advPos(j.getPosX(), (byte) (j.getPosY() + 1));
 				TPJoueur advInf = advPos(j.getPosX(), (byte) (j.getPosY() - 1));
 
+				// passage en équipe noir si le joueur est bloqué
 				if ((advSup.getTeam() == advInf.getTeam()) && advSup.getTeam() != j.getTeam()) {
 					j.setAlive(false);
 					j.setTeam(TPTeam.noir);
@@ -175,6 +178,7 @@ class ServeurThreadClient implements Runnable {
 	}
 
 	/**
+	 * retourne les positions des joueurs adverses a chaque update de déplacement
 	 * 
 	 * @param posX
 	 * @param posY
@@ -206,6 +210,7 @@ class ServeurThreadClient implements Runnable {
 	}
 
 	/**
+	 * apparition d'un joueur
 	 * 
 	 * @param joueur
 	 * @return

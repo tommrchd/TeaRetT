@@ -101,6 +101,7 @@ public class TPJoueur implements Serializable {
 	}
 
 	/**
+	 * fonction de mise à jour d'un joueur pour chaque déplacement de ce joueur ou d'un autre
 	 * 
 	 * @param joueur
 	 */
