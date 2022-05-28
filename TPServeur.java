@@ -102,6 +102,7 @@ class ServeurThreadClient implements Runnable {
 
 		while (!end) {
 			try {
+				// vérification de l'état des joueurs
 				byte keep_x = this.joueur.getPosX();
 				byte keep_y = this.joueur.getPosY();
 
