@@ -17,7 +17,7 @@ import java.io.ObjectOutputStream;
  */
 public class TPClient extends Frame {
 
-	int port = 2000;
+	int port = 6000;
 	Socket socket = null;
 
 	static TPJoueur joueur;
