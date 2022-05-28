@@ -17,8 +17,8 @@ public class TPCanvas extends Canvas {
 	// 0 black
 	// 1 blue
 	// 2 red
-	// 3 green (bloqué blue)
-	// 4 yellow (bloqué red);
+	// 3 green (bloque blue)
+	// 4 yellow (bloque red);
 	
 	public TPCanvas(byte [] pEtat)
 	{
